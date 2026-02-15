@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mohammed Saadat Ali - Digital Card</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: white;
+            background: linear-gradient(270deg, red, blue, green, purple, orange);
+            background-size: 1000% 1000%;
+            animation: rgbMove 8s ease infinite;
+        }
+
+        @keyframes rgbMove {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+
+        section {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .welcome h1 {
+            font-size: 40px;
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .welcome button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 10px;
+            background: white;
+            color: black;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .welcome button:hover {
+            background: gold;
+        }
+
+        .card {
+            background: rgba(0, 0, 0, 0.7);
+            width: 320px;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 0 25px white;
+        }
+
+        img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            border: 3px solid white;
+            margin-bottom: 15px;
+        }
+
+        .info {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: 0.5s;
+            margin: 10px 0;
+            font-size: 15px;
+        }
+
+        .show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .details button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 8px;
+            background: white;
+            color: black;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        .details button:hover {
+            background: gold;
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+    </style>
+</head>
+<body>
+
+<!-- Welcome Section -->
+<section class="welcome">
+    <h1>✨ Welcome ✨</h1>
+    <a href="#details">
+        <button>Press to See Mohammed Saadat Ali Details ⬇</button>
+    </a>
+</section>
+
+<!-- Details Section -->
+<section id="details" class="details">
+    <div class="card">
+      
+        <h2>Mohammed Saadat Ali</h2>
+
+        <div id="phone" class="info">📞 phone number: +91 94421 17681</div>
+        <div id="email" class="info">📧 Mohammedsaadatali522@gamil.com</div>
+        <div id="instagram" class="info">    instagram id 
+        📸 @the_star_boy__01</div>
+        <div id="whatsapp" class="info">whatsapp number💬 +91 94421 17681</div>
+
+        <button onclick="showNext()">Show Details</button>
+    </div>
+</section>
+
+<script>
+let current = 0;
+const infos = document.querySelectorAll('.info');
+
+function showNext() {
+    if (current < infos.length) {
+        infos[current].classList.add('show');
+        current++;
+    }
+}
+</script>
+
+</body>
+</html>
